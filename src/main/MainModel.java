@@ -1,4 +1,6 @@
 package main;
 
-public class MainModel {
+public class MainModel
+{
+
 }
