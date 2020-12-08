@@ -8,6 +8,7 @@ public class MainModel
     final private ArrayList<String> negative_answers = new ArrayList<>();
     final private ArrayList<String> positive_answers = new ArrayList<>();
     final private ArrayList<String> neutral_answers = new ArrayList<>();
+    final private ArrayList<String> answers = new ArrayList<>();
 
     public MainModel ()
     {
@@ -33,6 +34,10 @@ public class MainModel
         negative_answers.add("My sources say no.");
         negative_answers.add("Outlook not so good.");
         negative_answers.add("Very doubtful");
+
+        answers.addAll(positive_answers);
+        answers.addAll(neutral_answers);
+        answers.addAll(negative_answers);
     }
 
     public String getAnswer (String a)
@@ -43,7 +48,7 @@ public class MainModel
         }
         else if (a.contains("?"))
         {
-            return getNeutral_answer();
+            return getAllAnswer();
         }
         else if (a.contains("SEW"))
         {
@@ -70,5 +75,10 @@ public class MainModel
     {
         Random rd = new Random();
         return negative_answers.get(rd.nextInt(negative_answers.size()));
+    }
+    public String getAllAnswer()
+    {
+        Random rd = new Random();
+        return answers.get(rd.nextInt(answers.size()));
     }
 }
