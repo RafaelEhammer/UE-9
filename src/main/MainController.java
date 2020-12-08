@@ -1,6 +1,6 @@
-package sample;
+package main;
 
-public class Controller
+public class MainController
 {
 
 }
